@@ -1,0 +1,34 @@
+{% extends "index.html" %}
+{% block content%}
+<div class="streamer_data">
+  <div class="streamerr">
+    {% if data %}
+              {% if data[2] %}
+              <div class="stream__status">
+                <div class="str-status">
+                    <div class="streamer_name">{{data[4]}}&nbsp;</div>
+                  <div class="online">Online</div>
+                </div>
+ 
+                <div class="str-url">
+                  <a href="{{data[1]}}" class="streamer_url">{{data[0]}}</a>
+                </div>
+                <a href="{{data[0]}}"><img class="stream_image" src="../static/images/{{data[-1]}}.jpeg" alt=""></a>
+                  {% if "youtube" in data[0] %}
+                    <div class="streamer_platform"><img src="../static/images/yt-logo.png" alt="" class="platform"></div>
+                  {% else %}
+                  <div class="streamer_platform"><img src="../static/images/twitch.png" alt="" class="platform"></div>
+                  {% endif %}
+                <!-- <div class="stream_title">{{data[4]}}</div> -->
+              </div>
+              {% else %}
+              <div class="str-status">
+                <div class="streamer_name">{{data[4]}}&nbsp;</div>
+                <div class="offline">Offline</div>
+              </div>
+              
+              {% endif %}
+    {% endif %}
+  </div>
+</div>
+{% endblock %} 

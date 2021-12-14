@@ -1,0 +1,46 @@
+
+            <!DOCTYPE html>
+              <html lang="en">
+              <head>
+                <meta charset="UTF-8">
+                <meta http-equiv="X-UA-Compatible" content="IE=edge">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <title>{{ data[3] }} | SC</title>
+                <link rel="shortcut icon" href="../static/images/favicon.ico">
+                <link rel="stylesheet" type="text/css" href="../static/css/style.css">
+                <link rel="stylesheet" type="text/css" href="../static/css/normalize.css">
+              </head>
+              <body>
+              <div id="top" class="reg__wrapper"><a href="{{ admin_status }}" class="reg__link">К списку стримеров</a></div>
+              <div class="main-data">
+                <div class="strem_view-name">{{ data[3] }}</div>
+                {% if data[1] %}
+                <div class="strem_view-status online">Online</div>
+                <div class="img_wrapper">
+                  <div>
+                    <a href="{{data[0]}}"><img class="stream_imageq" src="../static/images/{{ data[-1] }}.jpeg" alt=""></a>
+                  </div>
+                </div>
+                {% else %}
+                  <div class="strem_view-status offline">Offline</div>
+                {% endif %}
+                <div class="strem_view-some-text">{{ streamer_text }}</div>
+                <div class="strem_view-some-img">
+                <img class="stream_imageq" src="../static/images/{{ streamer__image }}" alt="">
+                </div>
+                <div class="strem_view-some-text">{{ streamer_text2 }}</div>
+                <div class="bottom_btns">
+                  <a href="{{ admin_status }}" class="reg__link">На главную</a>
+                  <a href="#top">               <div class="header__main-arrow__border">
+                    <div class="header__main-center__arrow">Наверх
+                      <img class="header__main-center__arrow2" src="../static/images/arrow-up.png" alt=""></a>
+                    </div>
+                  </div></a>
+                </div>
+              </div>
+              <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+              <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>            </body>
+              <script src="../static/js/script.js"></script>
+              </body>
+              </html>
+            

@@ -1,0 +1,32 @@
+{% extends "index.html" %}
+{% block content %}
+<div class="main">
+  <form class="form__ui" onsubmit="buttonPress();" action="" method="post">
+    <div class="input__container">
+      {% with messages = get_flashed_messages() %}
+        {% if messages %}
+          <ul class=flashes>
+            {% for message in messages %}
+              <li>{{ message }}</li>
+            {% endfor %}
+
+          </ul>
+        {% endif %}
+      {% endwith %}
+
+      </ul>
+        <li class="input__name-inf">Введите новое имя и описание для канала {{name}}</li>
+      </ul>
+      <input name="input__name-to-update" class="input__name" placeholder="input updated url"
+        type="text" autocomplete="off"></p>
+      <input name="input__name-description-to-update" class="input__name input__name-description" placeholder="input updated desription"
+        type="text" autocomplete="off"></p>
+
+
+
+    </div>
+    <input class="input__submit" type="submit" value="update name" />
+
+  </form>
+</div>
+{% endblock %}

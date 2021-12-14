@@ -1,0 +1,57 @@
+{% extends "index.html" %}
+{% block content %}
+  
+<div class="wrapper__main">
+    <div class="data">
+      {% if data %}
+      {% for item in data %}
+      <div class="data__object">
+        <div class="streamer">
+          <div class="stream_group">
+            {% if item[2] %}
+            <div class="stream__status">
+              <a href="/streamers/{{item[5]}}?ad_status=justuser"><div class="streamer_name">{{item[5]}}&nbsp;</div></a>
+              <div class="online">Online</div>
+              <!-- <div class="stream_title">{{item[4]}}</div> -->
+            </div>
+            <div class="stream_funcs">
+              {% if item[6] %}
+              <a href="/streamers/{{item[5]}}?ad_status=justuser">
+                <div class="streamer_description">{{item[6]}}&nbsp;</div>
+              </a>
+              {% endif %}
+            </div>
+            {% else %}
+            <div class="stream__status">
+              <a href="/streamers/{{item[5]}}?ad_status=justuser"><div class="streamer_name">{{item[5]}}&nbsp;</div></a>
+              <div class="offline">Offline</div>
+            </div>
+            <div class="stream_funcs">
+              {% if item[6] %}
+              <a href="/streamers/{{item[5]}}?ad_status=justuser">
+                <div class="streamer_description">{{item[6]}}&nbsp;</div>
+              </a>
+              {% endif %}
+            </div>
+            {% endif %}
+          </div>
+          {% if item[2] %}
+          <a href="{{item[1]}}"><img class="stream_image" src="../static/images/{{item[0]}}.jpeg" alt=""></a>
+          {% else %}
+          <img class="stream_image"
+            src="https://static.ra.co/images/events/flyer/2019/4/de-0411-1245196-0-front.jpg?dateUpdated=1554969405853" alt="">
+          {% endif %}
+          {% if "youtube" in item[1] %}
+          <div class="streamer_platform"><img src="../static/images/yt-logo.png" alt="" class="platform"></div>
+          {% else %}
+          <div class="streamer_platform"><img src="../static/images/twitch.png" alt="" class="platform"></div>
+          {% endif %}
+        </div>
+      </div>
+      {% endfor %}
+      {% endif %}
+    </div>
+</div>
+
+
+{% endblock %}

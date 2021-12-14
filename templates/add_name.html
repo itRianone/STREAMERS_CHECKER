@@ -1,0 +1,27 @@
+{% extends "index.html" %}
+{% block content %}
+<div class="main">
+  <form class="form__ui" onsubmit="buttonPress();" action="" method="post">
+    <div class="input__container">
+      {% with messages = get_flashed_messages() %}
+          {% if messages %}
+            <ul class=flashes>
+              {% for message in messages %}
+                <li>{{ message }}</li>
+              {% endfor %}
+              
+            </ul>
+          {% endif %}
+        {% endwith %}
+      <ul><li class="input__name-inf">Введите ссылку на отслеживаемый твич или ютуб канал</li></ul>
+      <input name="input__name" class="input__name" placeholder="input channel url" type="text" autocomplete="off"></p>
+      <input name="input__name-description" class="input__name input__name-description" placeholder="input channel desription" type="text" autocomplete="off"></p>
+
+      
+
+    </div>
+    <input class="input__submit" type="submit" value="add channel" />
+
+  </form>
+</div>
+{% endblock %}
