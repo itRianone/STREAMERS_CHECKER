@@ -1,14 +1,12 @@
 # STREAMERS_CHECKER
-# ИП проект 2
-**Название**: STREAMERS CHEACKER | SC
-**Цель**: Создать проект для отслеживания интересующих нас стримеров платформы Twitch и Youtube.
-**Для чего это сделано?** Для удобства, для того чтобы, вся информация о стримерах была на одном легком сайте
 
-# Общий вид проекта
+**Название**: STREAMERS CHEACKER | SC
+Site in flask python that parse status of streamers(online/offline) on Twitch & Youtube.
+It updates data every 15 mins
+
 ![image](https://user-images.githubusercontent.com/63122696/146057775-bc00e6db-15e9-45ae-ad6d-7370391e368e.png)
 
-# Функционал
-
-- Отслеживание добавленных стримеров
-- Админ-панель, которая открывается после ввода пароля и позволяет добавлять новых стримеров, удалять старых, обновлять их описание
-- Возможность посмотреть подробную информацию о каждом стримере(название, ссылка на канал, на какой платформе стримит и тд.)
+**funcs**
+- adding new streamers, editing it
+- view streamer detail information and edit it
+- admin panel
